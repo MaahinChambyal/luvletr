@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter for Saumya ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Didot&display=swap');
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Parisienne', cursive;
+            color: white;
+        }
+        
+        /* Background GIF Slideshow */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+            animation: bg-slideshow 20s infinite linear;
+        }
+        
+        @keyframes bg-slideshow {
+            0% { background-image: url('s1.gif'); }
+            10% { background-image: url('s2.gif'); }
+            20% { background-image: url('s3.gif'); }
+            30% { background-image: url('s4.gif'); }
+            40% { background-image: url('s5.gif'); }
+            50% { background-image: url('s6.gif'); }
+            60% { background-image: url('s7.gif'); }
+            70% { background-image: url('s8.gif'); }
+            80% { background-image: url('s9.gif'); }
+            90% { background-image: url('s10.gif'); }
+            100% { background-image: url('s1.gif'); }
+        }
+        
+        .envelope-container {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .envelope {
+            width: 320px;
+            height: 200px;
+            background: linear-gradient(135deg, #8B0000, #600000);
+            position: relative;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(135deg, #A00000, #700000);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transform-origin: top;
+            transition: transform 1s ease-in-out;
+        }
+        .letter {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 280px;
+            background: white;
+            color: #600000;
+            font-family: 'Didot', serif;
+            font-size: 18px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            transform: translate(-50%, 100%);
+            transition: transform 1s ease-in-out 0.5s;
+        }
+        .open .flap {
+            transform: rotateX(180deg);
+        }
+        .open .letter {
+            transform: translate(-50%, -20%);
+        }
+    </style>
+</head>
+<body>
+    <h2 style="font-family: 'Didot', serif; font-size: 24px; font-weight: 600; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Tap to open your love letter 💌</h2>
+    <div class="envelope-container" onclick="openLetter()">
+        <div class="envelope">
+            <div class="flap" id="flap"></div>
+            <div class="letter" id="letter">
+                <p style="font-family: 'Parisienne', cursive; font-size: 24px;">Dear Love,</p>
+                <p>(Write your message here)</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function openLetter() {
+            document.querySelector(".envelope").classList.toggle("open");
+        }
+    </script>
+</body>
+</html>
